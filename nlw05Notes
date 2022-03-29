@@ -53,3 +53,7 @@ todo codigo JS em react tenho qeu colocar entre chaves {}
 			Imutabilidade = a partir do momento que uma variável é criada ela não sofre alterações, nos sempre criamos uma nova informação baseada na informação que ja tinhamos... no number eu não o alterei, eu setei um novo valor baseado no valor antigo, não modificamos a informação, criamos uma nova
 			
 			ao alterar uma informção(por exemplo essa do number) ela meio que chama a funcao em uma nova execuçao, assim sendo, o primeiro console.log imprimiria 0 pois o number só se altera na proxima execução, enquanto segundo console.log imprimira 1 pois ja acabou a execução da função e assim ja setou o novo valor em number
+
+
+	
+Aquilo que eu quero que fique em todas as pages(ex: header e footer(no caso em específico o player)) eu coloco no App, e no index funciona como o sistema de rodas
