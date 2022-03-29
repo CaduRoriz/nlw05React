@@ -1,0 +1,59 @@
+
+
+HTML dentro do JS => JSX... TSX(por ser type script)
+
+o render do ReactDOM.render ele renderiza um JSX, no caso o HTML, por isso posso escrever HTML direto nele
+
+componente em react são funções que retornam um HTML
+
+todo codigo JS em react tenho qeu colocar entre chaves {}
+	type ButtonProps = {
+	    text?: string;
+	}
+
+	export function Button(props: ButtonProps){
+	    return(
+		<button>{props.text}</button>
+	    )
+	} 
+	Nesse pedaço de texto tem duas coisas imporantes, quando eu crio o atributo text pra esse type e coloco a interregoação quer dizer que text não é um atributo obrigatorio... além disso quando na declaracao da funcao, props seria o parametro que to passando pra funcao, e ButtonProps o tipo da variavel, que no caso é um tipo definido previamente
+	
+	
+	todo conteudo que eu passo para um componente |<componente> conteudo </componente> | é acessado por meio da propriedade children, que passa a "existir" quando eu não faço a tag de finalização unica <componente/> pois o componente fica entra a abertura e fechamento do componente
+	
+	
+	No react tudo é regido pelo estado dos componentes, tudo que não permaneça constnate do inicio ao fim da aplicação é alterado pela alteração do seue stado
+		
+		
+		
+		ESTADO NO REACT
+		
+			o react até consegue perceber que uma informação mudou para ser setado em um componente, mas essa inormação(propriedade) tem que ser um estado		
+			
+			import { useState } from "react";
+
+			const [number, setNumber] = useState(0);
+
+			export function Button(){
+			    
+			    
+			    function increment(){
+				setNumber(number + 1)
+				console.log(number);
+			    }
+			    	console.log(number);
+
+			    return(
+				<button onClick={increment}> {number} </button>
+			    )
+			}
+		ao usar os colchetes eu desestruturo a variavel number, isso graças ao useState do React, o primeiro atributo é o nome da variável e o segundo a função que altera o estado dessa propriedade... o parametro do useState é o valor inicial da variavel.
+		
+		CONCEITO DO REACT:
+			Imutabilidade = a partir do momento que uma variável é criada ela não sofre alterações, nos sempre criamos uma nova informação baseada na informação que ja tinhamos... no number eu não o alterei, eu setei um novo valor baseado no valor antigo, não modificamos a informação, criamos uma nova
+			
+			ao alterar uma informção(por exemplo essa do number) ela meio que chama a funcao em uma nova execuçao, assim sendo, o primeiro console.log imprimiria 0 pois o number só se altera na proxima execução, enquanto segundo console.log imprimira 1 pois ja acabou a execução da função e assim ja setou o novo valor em number
+
+
+	
+Aquilo que eu quero que fique em todas as pages(ex: header e footer(no caso em específico o player)) eu coloco no App, e no index funciona como o sistema de rodas
