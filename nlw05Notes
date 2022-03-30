@@ -57,3 +57,6 @@ todo codigo JS em react tenho qeu colocar entre chaves {}
 
 	
 Aquilo que eu quero que fique em todas as pages(ex: header e footer(no caso em específico o player)) eu coloco no App, e no index funciona como o sistema de rodas
+
+
+	No next há uma função do tipo: GetStaticProps, que deve ser importada import  { GetStaticProps } from 'next';
