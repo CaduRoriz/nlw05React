@@ -30,6 +30,7 @@ type HomeProps = {
 export default function Home(props: HomeProps) {
   //fazer um jeito pra usar um objeto criado para eu formatar a data e pegar data separado da duracao, duracao eh pq tenho que pegar do file
   return (
+
     <div className={styles.homepage}>
       <section className={styles.latestEpisodes}>
         <h2>Últimos lançamentos</h2>
@@ -93,7 +94,7 @@ export default function Home(props: HomeProps) {
                     />
                   </td>
                   <td>
-                    <Link href={`/episodes/${episode.title}`}>
+                    <Link href={`/episodes/${episode.id}`}>
                       <a>{episode.title}</a>
                     </Link>
                   </td>
@@ -162,7 +163,8 @@ export const getStaticProps: GetStaticProps = async () => {
   }); //vou tentar fazer fora da funcao GetStatic...
 
   const latestEpisodes = episodes.slice(0, 2);
-  const allEpisodes = episodes.slice(2, data?.lenght);
+  const allEpisodes = episodes.slice(2, episodes.lenght);
+  
 
   return {
     props: {
@@ -171,6 +173,7 @@ export const getStaticProps: GetStaticProps = async () => {
     },
     revalidate: 60 * 60 * 8,
   };
+ 
 };
 
 //toda essa parte é mais back do que front
